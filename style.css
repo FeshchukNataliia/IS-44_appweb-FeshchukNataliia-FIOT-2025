@@ -154,7 +154,7 @@ a.nav-link:hover {
     align-items: center; 
     text-align: center;
     padding: 2rem 1.5rem; 
-    background-image: url('../assets/images/main.bg.jpg');
+    background-image: url('./assets/images/main.bg.jpg');
     background-size: cover;
     background-position: center;
     padding-top: 80px; 
@@ -255,7 +255,7 @@ a.nav-link:hover {
     overflow: hidden;
     
     /* Ти можеш використати інше фонове зображення, якщо воно є */
-    background-image: url('../assets/images/photo.bg.jpg');
+    background-image: url('./assets/images/photo.bg.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -383,7 +383,7 @@ a.nav-link:hover {
     z-index: 1; /* Встановлюємо контекст нашарування */
 
     /* ⬇️ МІНЯТИ ФОТО ТУТ ⬇️ */
-    background-image: url('../assets/images/footer.bg.jpg');
+    background-image: url('./assets/images/footer.bg.jpg');
     background-size: cover;
     background-position: center;
 }
