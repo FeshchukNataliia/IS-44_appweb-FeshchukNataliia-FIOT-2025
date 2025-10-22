@@ -1,0 +1,483 @@
+/* ----------------------------------- */
+/* 1. БАЗОВІ СТИЛІ ТА ЗМІННІ КОЛЬОРІВ */
+/* ----------------------------------- */
+
+:root {
+    --primary-bg: #B3FFFB;    /* Головний фон: Світло-блакитний */
+    --header-footer-bg: #9BD9FB; /* Темно-синій */
+    --accent-color: #FF9C22;    /* Акцентний: Помаранчевий */
+    --text-color-dark: #333;
+    --text-color-light: #fff;
+    --base-padding: 1.5rem;
+    font-size: 16px; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0; 
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--primary-bg);
+    color: var(--text-color-dark);
+}
+
+a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* ----------------------------------- */
+/* 2. HEADER ТА НАВІГАЦІЯ */
+/* ----------------------------------- */
+
+.main-header {
+    /* ФІКС 1: Фон хедера на всіх макетах світлий */
+    background-color: var(--header-footer-bg);
+    padding: 1rem var(--base-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Легка тінь, як у макеті */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo-img {
+    height: 40px; /* Або інший розмір, який підходить вашому макету */
+    width: auto;
+}
+
+.main-nav {
+    display: flex; /* Використовуємо Flexbox для вирівнювання списку та кнопки */
+    align-items: center;
+    gap: 1.5rem; /* Відступ між списком меню та кнопкою */
+}
+
+.nav-list {
+    list-style: none;
+    /* ФІКС 2: Сховано на мобільних */
+    display: none; 
+    gap: 1.5rem;
+    /* ...тут будуть стилі для мобільного меню, коли воно відкрите */
+}
+
+.nav-link {
+    /* ФІКС 3: Колір посилань темний, не білий */
+    color: var(--text-color-dark);
+    font-weight: bold; /* Вони виглядають жирними на макеті */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a.nav-link:hover {
+    color: var(--accent-color);
+}
+
+.nav-button {
+    /* ФІКС 4: Сховано на мобільних */
+    display: none;
+    margin-left: 2rem;
+}
+
+.burger-menu-btn {
+    /* ФІКС 5: ПОКАЗАНО на мобільних */
+    display: block; 
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    /* Колір бургеру має бути темним */
+    color: var(--header-footer-bg);
+    cursor: pointer;
+}
+
+/* Кнопки */
+.btn {
+    background-color: var(--accent-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e58d1e;
+}
+
+.btn-disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ----------------------------------- */
+/* 3. ОСНОВНИЙ КОНТЕНТ ТА ЗАГОЛОВКИ */
+/* ----------------------------------- */
+
+.main-content {
+    padding: 0; /* Прибираємо всі відступи */
+}
+
+.container {
+    max-width: 1140px; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--base-padding);  /* 1.5rem */
+    padding-right: var(--base-padding); /* 1.5rem */
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+
+.hero-section {
+    position: relative; 
+    overflow: hidden; 
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    padding: 2rem 1.5rem; 
+    background-image: url('../assets/images/main.bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 80px; 
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Фон повинен бути під текстом */
+    pointer-events: none; /* Забороняємо кліки на фоні */
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Розтягує зображення, щоб воно повністю закрило контейнер */
+    opacity: 0.8; /* Зробимо фон напівпрозорим, щоб текст було добре видно */
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: 1; 
+}
+
+.hero-title, .hero-subtitle {
+    position: relative; /* Піднімаємо текст над фоном */
+    z-index: 10;
+    color: var(--text-color-light);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Легка тінь для читабельності */
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-bg);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    color: var(--primary-bg);
+}
+
+/* ----------------------------------- */
+/* 4. СЕКЦІЯ "ПРО НАС" (ADAPTIVE FLEX) */
+/* ----------------------------------- */
+
+.about-content {
+    display: flex;
+    flex-direction: column; /* За замовчуванням вертикально для мобільних */
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-text-block h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.about-facts ul {
+    list-style-position: inside;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.about-text-block {
+    /* ФІКС 11: Додаємо фон, рамку та відступи, як у Figma */
+    background-color: var(--header-footer-bg);
+    border: 2px solid var(--header-footer-bg); /* Або інший темний колір з макету */
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.facts-title {
+    color: var(--header-footer-bg);
+    margin-top: 1.5rem;
+}
+
+/* 4.1. СЕКЦІЯ "АТРАКЦІОНИ" */
+.section-attractions {
+    /* ФІКС 12: Повторюємо ефект секції Hero */
+    position: relative;
+    padding: 3rem var(--base-padding);
+    overflow: hidden;
+    
+    /* Ти можеш використати інше фонове зображення, якщо воно є */
+    background-image: url('../assets/images/photo.bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.section-attractions::after {
+    /* ФІКС 13: Затемнення фону */
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Можна погратися з прозорістю */
+    z-index: 1;
+}
+
+.title-attractions {
+    /* ФІКС 14: Заголовок має бути світлим */
+    color: var(--text-color-light);
+    position: relative; /* Щоб бути над затемненням */
+    z-index: 2;
+}
+
+.gallery-container {
+    background-color: var(--primary-bg);
+    padding: 1.5rem; /* "Рамка" */
+    border-radius: 10px;
+    position: relative; 
+    z-index: 2; /* Щоб бути над фоном секції */
+    max-width: 900px; /* Обмеження ширини */
+    margin: 0 auto;
+}
+
+.gallery-wrapper {
+    display: flex; /* Вишиковуємо фото в ряд */
+    overflow-x: auto; /* Дозволяє горизонтальний скрол */
+    border-radius: 5px; /* Легке заокруглення для скрол-зони */
+
+    /* === Магія CSS Scroll Snap === */
+    scroll-snap-type: x mandatory; /* Примусове "прилипання" по осі X */
+    -webkit-overflow-scrolling: touch; /* Для плавності на iOS */
+}
+
+.gallery-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-image {
+    width: 100%; /* Кожна картинка на всю ширину контейнера */
+    flex-shrink: 0; /* Забороняємо картинкам стискатися */
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Легке заокруглення для самих фото */
+
+    /* === Магія CSS Scroll Snap === */
+    scroll-snap-align: start; /* "Прилипати" кожне фото до початку контейнера */
+}
+
+.gallery-main-img {
+    width: 100%; /* Картинка заповнює .attraction-gallery */
+    height: auto;
+    border-radius: 5px; /* Легке заокруглення для самої картинки */
+    display: block; /* Забирає зайвий відступ знизу */
+}
+
+/* ----------------------------------- */
+/* 5. СЕКЦІЯ ТАРИФІВ (ADAPTIVE GRID) */
+/* ----------------------------------- */
+
+.section-tariffs {
+    margin-bottom: 5rem;
+}
+
+.tariffs-grid {
+    display: grid;
+    /* На мобільних: 1 стовпець */
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 900px; /* Обмеження ширини для центрування */
+}
+
+.tariff-card {
+    /* ФІКС 16: Фон карток - світло-блакитний */
+    background-color: var(--primary-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    /* ФІКС 17: Додаємо рамку, як у Figma */
+    border: 2px solid var(--header-footer-bg); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.tariff-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: var(--text-color-dark);
+    font-size: 1.5rem;
+}
+
+.card-price {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 0.5rem 0 1rem;
+}
+
+.card-description {
+    margin-bottom: 1.5rem;
+    color: var(--text-color-dark);
+}
+
+/* ----------------------------------- */
+/* 6. FOOTER */
+/* ----------------------------------- */
+
+.main-footer {
+    background-color: var(--header-footer-bg);
+    color: var(--text-color-light);
+    padding: 2rem var(--base-padding);
+    text-align: center;
+    line-height: 1.8;
+    position: relative; /* Потрібно для роботи ::after */
+    z-index: 1; /* Встановлюємо контекст нашарування */
+
+    /* ⬇️ МІНЯТИ ФОТО ТУТ ⬇️ */
+    background-image: url('../assets/images/footer.bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.main-footer::after {
+    /* Затемнення, щоб текст добре читався */
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* Замість темного оверлея можна використати твій
+       --header-footer-bg з напівпрозорістю 
+    */
+    background-color: rgba(63, 113, 221, 0.8); /* Наприклад, 80% прозорості твого синього */
+    z-index: -1; /* Поміщаємо оверлей *позаду* всього контенту футера */
+}
+
+.footer-lead-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.footer-copy-text {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* ----------------------------------- */
+/* 7. МЕДІА-ЗАПИТИ ДЛЯ АДАПТИВНОСТІ */
+/* ----------------------------------- */
+
+/* Планшети (>= 768px) */
+@media (min-width: 768px) {
+
+    .main-nav {
+        /* Додамо це для вирівнювання на десктопі */
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .nav-list {
+        /* ФІКС 6: ПОКАЗАНО на десктопі */
+        display: flex; 
+    }
+    
+    .nav-button {
+        /* ФІКС 7: ПОКАЗАНО на десктопі */
+        display: block;
+    }
+
+    /* Header: Сховати кнопку бургер-меню */
+    .burger-menu-btn {
+        display: none;
+    }
+    
+    /* Секція "Про нас": горизонтальний макет */
+    .about-content {
+        flex-direction: row;
+        text-align: left;
+    }
+    
+    .about-image {
+        width: 40%; 
+        max-width: 400px;
+    }
+    
+    .about-text-block {
+        width: 60%;
+        padding-left: 2rem;
+    }
+    
+    /* Секція Тарифів: 3 колонки */
+    .tariffs-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Footer: Вирівнювання */
+    .main-footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .footer-contacts {
+        text-align: left;
+    }
+
+    .footer-copy-text {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
