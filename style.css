@@ -481,3 +481,412 @@ a.nav-link:hover {
         margin-top: 1rem;
     }
 }
+
+/* ----------------------------------- */
+/* 8. СТИЛІ СТОРІНКИ ВХОДУ (LOGIN) */
+/* ----------------------------------- */
+
+/* Обгортка для центрування форми по вертикалі */
+.login-page-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 160px); /* (100% висоти - хедер і футер) */
+    padding: 2rem 0;
+    background-color: var(--primary-bg); /* Твій світло-блакитний фон */
+}
+
+/* Контейнер самої форми */
+.login-container {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto; /* Центрування */
+    padding: 2rem;
+    background-color: var(--header-footer-bg); /* Твій світло-синій */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-container .section-title {
+    margin-top: 0; /* Прибираємо зайвий відступ у заголовка */
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark-blue); /* Темно-синій, як у тарифів */
+}
+
+/* Стилі для самої форми */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color-dark);
+}
+
+.form-group input {
+    padding: 0.75rem;
+    border: 2px solid var(--primary-dark-blue);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* Кнопка "Увійти" */
+.btn-login {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    background-color: var(--accent-color); /* Твій помаранчевий */
+    color: var(--text-color-light);
+}
+
+.btn-login:hover {
+    background-color: #e58d1e; /* Темніший помаранчевий */
+}
+
+/* Блок з посиланнями "Забули пароль?" */
+.form-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-links a {
+    color: var(--primary-dark-blue);
+    text-decoration: none;
+}
+.form-links a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+/* * Декоративні повідомлення (завдання) 
+ * За замовчуванням приховане.
+ * Щоб побачити, як воно виглядає, 
+ * тимчасово прибери 'display: none'
+ */
+.form-message {
+    padding: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    display: none; /* <-- Приховано за замовчуванням */
+}
+
+.form-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    display: block; /* <-- Тимчасово увімкнено, щоб ти бачила (як у завданні) */
+}
+
+/* * Лінки для імітації (завдання)
+ */
+.simulation-links {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    text-align: center;
+}
+.simulation-links p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.simulation-links a {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* ----------------------------------- */
+/* 9. СТИЛІ СТОРІНКИ ПРОФІЛЮ (PROFILE) */
+/* ----------------------------------- */
+
+/* Зміни в хедері для Користувача */
+.nav-user-actions {
+    display: none; /* Приховано на мобілках */
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-user-link {
+    font-weight: bold;
+    color: var(--primary-dark-blue);
+    text-decoration: none;
+}
+.nav-user-link:hover {
+    color: var(--accent-color);
+}
+
+/* Нова кнопка "Вийти" (вторинна) */
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color-light);
+}
+
+/* Активне посилання в мобільному меню */
+.nav-link-active {
+    color: var(--accent-color) !important;
+}
+
+
+/* Стилі контенту профілю */
+.profile-header {
+    text-align: center;
+    padding: 3rem 0 2rem;
+    border-bottom: 2px solid var(--header-footer-bg);
+}
+.profile-header .section-title {
+    margin: 0;
+}
+
+.profile-section {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.profile-section-title {
+    font-size: 1.8rem;
+    color: var(--primary-dark-blue);
+    margin-bottom: 1.5rem;
+}
+
+/* Список квитків */
+.ticket-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ticket-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid var(--primary-dark-blue);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.ticket-title {
+    font-size: 1.25rem;
+    color: var(--text-color-dark);
+}
+
+.ticket-date {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 0.25rem;
+}
+
+.ticket-status {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2ecc71; /* Зелений */
+}
+
+/* Стиль для використаного квитка */
+.ticket-expired .ticket-title {
+    color: #999;
+}
+.ticket-expired .ticket-status {
+    color: #999; /* Сірий */
+}
+
+/* ----------------------------------- */
+/* 10. ОНОВЛЕННЯ МЕДІА-ЗАПИТІВ (PROFILE) */
+/* ----------------------------------- */
+
+@media (min-width: 768px) {
+    /* * Показуємо нові кнопки "Мій профіль" / "Вийти"
+     * і ховаємо стару кнопку "Купити квиток"
+     * (це треба буде зробити, додавши клас до body,
+     * але для макету ми просто покажемо нові)
+     */
+    
+    /* Показуємо нові кнопки на десктопі */
+    .nav-user-actions {
+        display: flex;
+    }
+    
+    /* * На сторінках profile.html та admin.html 
+     * стара кнопка "Купити квиток" (nav-button)
+     * не повинна бути видимою.
+     * Оскільки в нас різні HTML-файли, ми просто
+     * приберемо її звідти, або можемо додати клас.
+     * * У нашому profile.html ми прибрали .nav-button,
+     * тому він і не з'явиться. Це ідеально.
+     */
+}
+
+/* ----------------------------------- */
+/* 11. СТИЛІ АДМІН-ПАНЕЛІ (ADMIN) */
+/* ----------------------------------- */
+
+/* Загальні стилі для сторінки адміна */
+.admin-body {
+    /* Використовуємо інший фон, щоб чітко розмежувати ролі  */
+    background-color: #f4f7f6; 
+    color: #333;
+}
+
+/* Хедер адмін-панелі */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem var(--base-padding);
+    background-color: #fff;
+    border-bottom: 3px solid var(--primary-dark-blue);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.admin-header-title {
+    font-size: 1.5rem;
+    color: var(--text-color-dark);
+}
+.admin-header-title a {
+    color: var(--text-color-dark);
+    text-decoration: none;
+}
+.admin-header-title a:hover {
+    color: var(--accent-color);
+}
+.admin-header-title span {
+    font-size: 1.2rem;
+    color: #777;
+    font-weight: 400;
+}
+
+.admin-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Головний контент адмін-панелі */
+.admin-main {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 var(--base-padding);
+}
+
+.admin-section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.admin-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.admin-section-title {
+    font-size: 1.8rem;
+    color: var(--primary-dark-blue);
+}
+
+/* Кнопка "Створити" */
+.btn-create {
+    background-color: var(--accent-color); /* Помаранчева */
+    font-weight: bold;
+}
+.btn-create:hover {
+    background-color: #e58d1e;
+}
+
+
+/* Стилізація таблиці (Read) */
+.admin-table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* Додає горизонтальний скрол на мобілках */
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse; /* Прибирає подвійні рамки */
+    text-align: left;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-table th {
+    background-color: #f9f9f9;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #555;
+}
+
+.admin-table td {
+    font-size: 1rem;
+}
+
+/* Стовпчик "Дії" (Update, Delete) */
+.table-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-action {
+    padding: 0.4rem 0.6rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Кнопка "Редагувати" */
+.btn-edit {
+    background-color: #3498db; /* Синій */
+}
+.btn-edit:hover {
+    background-color: #2980b9;
+}
+
+/* Кнопка "Видалити" */
+.btn-delete {
+    background-color: #e74c3c; /* Червоний */
+}
+.btn-delete:hover {
+    background-color: #c0392b;
+}
+
+/* Футер адмін-панелі */
+.admin-footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background-color: #333;
+    color: #aaa;
+    font-size: 0.9rem;
+}

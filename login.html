@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід - Аквапарк Хвиля</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="main-header">
+        <a href="index.html"> <img src="assets/images/logo.png" alt="Логотип Аквапарк Хвиля" class="logo-img">
+        </a>
+        
+        <nav class="main-nav">
+            <ul class="nav-list" id="mobile-menu">
+                <li class="nav-item"><a href="index.html#about" class="nav-link">Про нас</a></li>
+                <li class="nav-item"><a href="index.html#rules" class="nav-link">Правила</a></li>
+                <li class="nav-item"><a href="index.html#prices" class="nav-link">Ціни</a></li>
+                <li class="nav-item"><a href="index.html#contacts" class="nav-link">Контакти</a></li>
+            </ul>
+            <a href="login.html" class="btn btn-primary nav-button">Увійти</a>
+            <button class="burger-menu-btn" id="burger-btn" aria-label="Меню">☰</button> 
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="login-page-wrapper">
+            <div class="login-container">
+                <h2 class="section-title">Вхід до акаунту</h2>
+                
+                <form class="login-form">
+                    
+                    <div class="form-message form-error">
+                        Неправильний логін або пароль. Спробуйте ще раз.
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Електронна пошта</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-login">Увійти</button>
+                </form>
+
+                <div class="form-links">
+                    <a href="#">Забули пароль?</a>
+                    <a href="#">Зареєструватися</a>
+                </div>
+
+                <div class="simulation-links">
+                    <p>Для перевірки макетів:</p>
+                    <a href="profile.html">Перейти на сторінку Користувача &rarr;</a>
+                    <a href="admin.html">Перейти на сторінку Адміністратора &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer" id="contacts">
+        <p class="footer-lead-text">Залишились питання? Зв'яжіться з нами!</p>
+        <div class="footer-contacts">
+            <p>Телефон: +38 (044) 123-45-67</p>
+            <p>Адреса: м. Київ, вул. Тропічна, 7</p>
+            <p>Email: info@hvyliapark.com.ua</p>
+        </div>
+        <p class="footer-copy-text">© 2025 Aquapark “Хвиля”. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        const burgerBtn = document.getElementById('burger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        burgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('is-open');
+        });
+    </script>
+</body>
+</html>

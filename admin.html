@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель Адміністратора - Аквапарк Хвиля</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body"> <header class="admin-header">
+        <h1 class="admin-header-title">
+            <a href="index.html">Аквапарк "Хвиля"</a>
+            <span> | Панель Адміністратора</span>
+        </h1>
+        
+        <div class="admin-user-actions">
+            <span>Вітаємо, Admin!</span>
+            <a href="index.html" class="btn btn-secondary">Вийти</a>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        
+        <section class="admin-section">
+            <div class="admin-section-header">
+                <h2 class="admin-section-title">Керування користувачами</h2>
+                
+                <button class="btn btn-primary btn-create">
+                    + Додати нового користувача
+                </button>
+            </div>
+            
+            <div class="admin-table-wrapper">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ім'я</th>
+                            <th>Email</th>
+                            <th>Роль</th>
+                            <th>Дата реєстрації</th>
+                            <th>Дії</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Наталія Фещук</td>
+                            <td>nata@example.com</td>
+                            <td>Користувач</td>
+                            <td>2025-10-20</td>
+                            <td class="table-actions">
+                                <button class="btn-action btn-edit" aria-label="Редагувати">✎</button>
+                                <button class="btn-action btn-delete" aria-label="Видалити">🗑</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Admin Adminovych</td>
+                            <td>admin@example.com</td>
+                            <td>Адміністратор</td>
+                            <td>2025-01-01</td>
+                            <td class="table-actions">
+                                <button class="btn-action btn-edit" aria-label="Редагувати">✎</button>
+                                <button class="btn-action btn-delete" aria-label="Видалити">🗑</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Іван Петренко</td>
+                            <td>ivan@example.com</td>
+                            <td>Користувач</td>
+                            <td>2025-10-22</td>
+                            <td class="table-actions">
+                                <button class="btn-action btn-edit" aria-label="Редагувати">✎</button>
+                                <button class="btn-action btn-delete" aria-label="Видалити">🗑</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </section> </main>
+    
+    <footer class="admin-footer">
+        <p>© 2025 Aquapark “Хвиля”. Панель керування.</p>
+    </footer>
+
+    </body>
+</html>
