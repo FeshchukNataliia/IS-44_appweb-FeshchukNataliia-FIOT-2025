@@ -3,88 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Панель Адміністратора - Аквапарк Хвиля</title>
-
+    <title>Адмін-панель - Тарифи</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Додаткові стилі для форми, щоб вона виглядала гарно в твоєму дизайні */
+        .admin-form-container {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            display: none; /* Спочатку прихована */
+        }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-input { 
+            width: 100%; padding: 8px; border: 1px solid #ced4da; border-radius: 4px; 
+        }
+        .btn-save { background-color: #28a745; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; }
+        .btn-cancel { background-color: #6c757d; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; margin-left: 10px;}
+    </style>
 </head>
-<body class="admin-body"> <header class="admin-header">
+<body class="admin-body"> 
+    <header class="admin-header">
         <h1 class="admin-header-title">
             <a href="index.html">Аквапарк "Хвиля"</a>
-            <span> | Панель Адміністратора</span>
+            <span> | Адміністрування Тарифів</span>
         </h1>
         
         <div class="admin-user-actions">
-            <span>Вітаємо, Admin!</span>
-            <a href="index.html" class="btn btn-secondary">Вийти</a>
+            <span>Admin Mode</span>
+            <a href="index.html" class="btn btn-secondary">На сайт</a>
         </div>
     </header>
 
     <main class="admin-main">
-        
         <section class="admin-section">
             <div class="admin-section-header">
-                <h2 class="admin-section-title">Керування користувачами</h2>
+                <h2 class="admin-section-title">Керування квитками</h2>
                 
-                <button class="btn btn-primary btn-create">
-                    + Додати нового користувача
+                <button class="btn btn-primary btn-create" onclick="toggleForm()">
+                    + Додати новий квиток
                 </button>
             </div>
             
+            <div id="create-form" class="admin-form-container">
+                <h3>Новий квиток</h3>
+                <form id="ticket-form">
+                    <div class="form-group">
+                        <label>Назва:</label>
+                        <input type="text" id="name" class="form-input" placeholder="Напр. VIP Вхід" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Опис:</label>
+                        <input type="text" id="description" class="form-input" placeholder="Опис послуги" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Ціна (грн):</label>
+                        <input type="number" id="price" class="form-input" placeholder="1000" required>
+                    </div>
+                    <button type="submit" class="btn-save">Зберегти</button>
+                    <button type="button" class="btn-cancel" onclick="toggleForm()">Скасувати</button>
+                </form>
+            </div>
+
             <div class="admin-table-wrapper">
                 <table class="admin-table">
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Ім'я</th>
-                            <th>Email</th>
-                            <th>Роль</th>
-                            <th>Дата реєстрації</th>
+                            <th>Назва</th>
+                            <th>Опис</th>
+                            <th>Ціна</th>
                             <th>Дії</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tickets-table-body">
                         <tr>
-                            <td>1</td>
-                            <td>Наталія Фещук</td>
-                            <td>nata@example.com</td>
-                            <td>Користувач</td>
-                            <td>2025-10-20</td>
-                            <td class="table-actions">
-                                <button class="btn-action btn-edit" aria-label="Редагувати">✎</button>
-                                <button class="btn-action btn-delete" aria-label="Видалити">🗑</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Admin Adminovych</td>
-                            <td>admin@example.com</td>
-                            <td>Адміністратор</td>
-                            <td>2025-01-01</td>
-                            <td class="table-actions">
-                                <button class="btn-action btn-edit" aria-label="Редагувати">✎</button>
-                                <button class="btn-action btn-delete" aria-label="Видалити">🗑</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Іван Петренко</td>
-                            <td>ivan@example.com</td>
-                            <td>Користувач</td>
-                            <td>2025-10-22</td>
-                            <td class="table-actions">
-                                <button class="btn-action btn-edit" aria-label="Редагувати">✎</button>
-                                <button class="btn-action btn-delete" aria-label="Видалити">🗑</button>
-                            </td>
+                            <td colspan="5" style="text-align:center">Завантаження даних...</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             
-        </section> </main>
+        </section> 
+    </main>
     
     <footer class="admin-footer">
         <p>© 2025 Aquapark “Хвиля”. Панель керування.</p>
     </footer>
 
-    </body>
+    <script src="JS/admin.js"></script>
+</body>
 </html>
