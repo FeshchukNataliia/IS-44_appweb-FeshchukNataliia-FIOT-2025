@@ -70,4 +70,4 @@ window.logout = function() {
 };
 
 // Запуск
-loadMyTickets();
+loadMyTickets(); 
