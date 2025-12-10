@@ -912,6 +912,7 @@ a.nav-link:hover {
     background-color: #c0392b;
 }
 
+
 /* Футер адмін-панелі */
 .admin-footer {
     text-align: center;
@@ -992,4 +993,14 @@ a.nav-link:hover {
 #auth-menu .btn-admin {
     padding: 8px 12px;
     font-size: 0.9rem;
+}
+
+.simple-header .container {
+    display: flex;
+    align-items: center;
+    /* Оце магічна властивість, яка розкидає елементи по краях */
+    justify-content: space-between; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
