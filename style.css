@@ -819,7 +819,6 @@ a.nav-link:hover {
     background-color: #e58d1e;
 }
 
-
 /* Стилізація таблиці (Read) */
 .admin-table-wrapper {
     width: 100%;
@@ -890,3 +889,84 @@ a.nav-link:hover {
     color: #aaa;
     font-size: 0.9rem;
 }
+
+/* ----------------------------------- */
+/* === 12 Стилі для Авторизації (Login/Register) === */
+/* ----------------------------------- */
+
+.auth-body {
+    font-family: sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.auth-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover { background: #0056b3; }
+
+.error-msg {
+    color: #dc3545;
+    text-align: center;
+    display: none;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8d7da;
+    border-radius: 5px;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.auth-link:hover { text-decoration: underline; }

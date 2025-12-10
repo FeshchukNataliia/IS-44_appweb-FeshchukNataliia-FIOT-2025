@@ -5,16 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вхід - Аквапарк</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .auth-container { max-width: 400px; margin: 100px auto; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
-        .btn-submit { width: 100%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
-        .btn-submit:hover { background: #0056b3; }
-        .error-msg { color: red; text-align: center; display: none; margin-bottom: 15px; }
-        .auth-link { text-align: center; margin-top: 15px; display: block; }
-    </style>
 </head>
 <body>
 
@@ -39,49 +29,6 @@
         <a href="index.html" class="auth-link">← На головну</a>
     </div>
 
-    <script>
-        const BASE_URL = 'https://aquapark-api-nata.onrender.com';
-
-        document.getElementById('login-form').addEventListener('submit', async (e) => {
-            e.preventDefault(); // 🛑 1. Зупиняємо стандартну відправку форми (щоб пароль не ліз в URL)
-
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const errorMsg = document.getElementById('error-message');
-
-            try {
-                // 2. Відправляємо дані на сервер
-                const response = await fetch(`${BASE_URL}/auth/login`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, password })
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    // 3. УСПІХ: Зберігаємо токен і роль у пам'яті браузера
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('role', data.role);
-                    localStorage.setItem('username', data.name);
-
-                    // 4. Перенаправляємо на головну сторінку (або в адмінку, якщо адмін)
-                    if (data.role === 'Admin') {
-                        window.location.href = 'admin.html';
-                    } else {
-                        window.location.href = 'index.html';
-                    }
-                } else {
-                    // ПОМИЛКА: Показуємо текст помилки
-                    errorMsg.textContent = data.error || 'Помилка входу';
-                    errorMsg.style.display = 'block';
-                }
-            } catch (err) {
-                console.error(err);
-                errorMsg.textContent = 'Сервер не відповідає';
-                errorMsg.style.display = 'block';
-            }
-        });
-    </script>
+    <script src="JS/script.js"></script>
 </body>
 </html>

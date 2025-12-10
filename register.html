@@ -5,17 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Реєстрація - Аквапарк</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Ті самі стилі, що й для логіну */
-        .auth-container { max-width: 400px; margin: 100px auto; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
-        .btn-submit { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
-        .btn-submit:hover { background: #218838; }
-        .error-msg { color: red; text-align: center; display: none; margin-bottom: 15px; }
-        .auth-link { text-align: center; margin-top: 15px; display: block; }
-    </style>
 </head>
 <body>
 
@@ -42,39 +31,6 @@
         <a href="login.html" class="auth-link">Вже є акаунт? Увійти</a>
     </div>
 
-    <script>
-        const BASE_URL = 'https://aquapark-api-nata.onrender.com';
-
-        document.getElementById('register-form').addEventListener('submit', async (e) => {
-            e.preventDefault(); // Зупиняємо перезавантаження сторінки
-
-            const full_name = document.getElementById('full_name').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const errorMsg = document.getElementById('error-message');
-
-            try {
-                const response = await fetch(`${BASE_URL}/auth/register`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ full_name, email, password })
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    alert('Реєстрація успішна! Тепер увійдіть.');
-                    window.location.href = 'login.html'; // Перекидаємо на вхід
-                } else {
-                    errorMsg.textContent = data.error || 'Помилка реєстрації';
-                    errorMsg.style.display = 'block';
-                }
-            } catch (err) {
-                console.error(err);
-                errorMsg.textContent = 'Сервер не відповідає';
-                errorMsg.style.display = 'block';
-            }
-        });
-    </script>
+    <script src="JS/script.js"></script>
 </body>
 </html>
