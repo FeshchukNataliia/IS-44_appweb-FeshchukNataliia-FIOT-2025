@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мої квитки - Аквапарк</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body"> 
+    <header class="simple-header">
+        <div class="container">
+            <a href="index.html" title="На головну">
+                <img src="images/logo.png" alt="Аквапарк Хвиля" class="logo-img">
+            </a>
+            <button onclick="logout()" style="float: right; margin-top: 10px;" class="btn-login">Вийти</button>
+        </div>
+    </header>
+
+    <main class="login-page-wrapper">
+        <div class="container" style="max-width: 800px; width: 100%;">
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 class="section-title" style="margin: 0;">🎫 Мої квитки</h2>
+                <a href="index.html" style="color: var(--primary-dark-blue); text-decoration: none;">← Купити ще</a>
+            </div>
+
+            <div id="tickets-list" class="tickets-grid">
+                <p style="text-align: center;">Завантаження історії...</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Аквапарк. Всі права захищені.</p>
+        </div>
+    </footer>
+
+    <script src="js/tickets.js"></script>
+</body>
+</html>

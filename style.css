@@ -921,3 +921,75 @@ a.nav-link:hover {
     color: #aaa;
     font-size: 0.9rem;
 }
+
+/* === Стилі для сторінки Мої Квитки === */
+
+.tickets-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ticket-item {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--accent-color); /* Помаранчева смужка зліва */
+    transition: transform 0.2s;
+}
+
+.ticket-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.ticket-info h3 {
+    margin: 0 0 5px 0;
+    color: var(--primary-dark-blue);
+}
+
+.ticket-date, .ticket-price {
+    margin: 5px 0;
+    color: #555;
+}
+
+.ticket-status {
+    text-align: right;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.status-active {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Виправляємо меню авторизації в хедері */
+#auth-menu {
+    display: flex;             /* Розміщуємо в рядок */
+    align-items: center;       /* Центруємо по вертикалі */
+    gap: 15px;                 /* Відступ між кнопками 15 пікселів */
+    flex-wrap: wrap;           /* Якщо місця мало - переносимо на новий рядок */
+}
+
+/* Робимо ім'я користувача гарним */
+#auth-menu span {
+    white-space: nowrap;       /* Забороняємо розривати ім'я */
+    font-size: 0.95rem;
+}
+
+/* Трохи зменшимо кнопки в меню, щоб все влізло */
+#auth-menu .btn-login, 
+#auth-menu .btn-admin {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+}
