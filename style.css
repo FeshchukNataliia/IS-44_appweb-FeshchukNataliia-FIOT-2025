@@ -483,34 +483,62 @@ a.nav-link:hover {
 }
 
 /* ----------------------------------- */
-/* 8. СТИЛІ СТОРІНКИ ВХОДУ (LOGIN) */
+/* 8. СТИЛІ СТОРІНКИ ВХОДУ (LOGIN/REGISTER) */
 /* ----------------------------------- */
+
+/* === Спрощений Хедер (для Логіну/Адмінки) === */
+.simple-header {
+    background-color: var(--header-footer-bg);
+    padding: 15px 0;
+    /* Було center, ставимо left або просто прибираємо, бо div і так зліва */
+    text-align: left; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Додатково: щоб логотип точно був зліва в межах контейнера */
+.simple-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Притискаємо вліво */
+}
+
+.logo-img {
+    height: 60px; /* Висота логотипу (налаштуй під себе) */
+    width: auto;  /* Ширина автоматична */
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.logo-img:hover {
+    transform: scale(1.05); /* Легке збільшення при наведенні */
+}
 
 /* Обгортка для центрування форми по вертикалі */
 .login-page-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 160px); /* (100% висоти - хедер і футер) */
+    min-height: calc(100vh - 160px); 
     padding: 2rem 0;
-    background-color: var(--primary-bg); /* Твій світло-блакитний фон */
+    background-color: var(--primary-bg); 
 }
 
 /* Контейнер самої форми */
 .login-container {
     max-width: 500px;
     width: 100%;
-    margin: 0 auto; /* Центрування */
+    margin: 0 auto;
     padding: 2rem;
-    background-color: var(--header-footer-bg); /* Твій світло-синій */
+    background-color: var(--header-footer-bg);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .login-container .section-title {
-    margin-top: 0; /* Прибираємо зайвий відступ у заголовка */
+    margin-top: 0;
     margin-bottom: 1.5rem;
-    color: var(--primary-dark-blue); /* Темно-синій, як у тарифів */
+    color: var(--primary-dark-blue);
+    text-align: center; /* Центруємо заголовок */
 }
 
 /* Стилі для самої форми */
@@ -543,71 +571,75 @@ a.nav-link:hover {
     border-color: var(--accent-color);
 }
 
-/* Кнопка "Увійти" */
+/* Кнопка "Увійти" / "Зареєструватися" */
 .btn-login {
     margin-top: 1rem;
     padding: 0.8rem;
     font-size: 1.1rem;
-    background-color: var(--accent-color); /* Твій помаранчевий */
+    background-color: var(--accent-color);
     color: var(--text-color-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s;
 }
 
 .btn-login:hover {
-    background-color: #e58d1e; /* Темніший помаранчевий */
+    background-color: #e58d1e;
 }
 
-/* Блок з посиланнями "Забули пароль?" */
+/* Блок з посиланнями */
 .form-links {
     margin-top: 1.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Центруємо посилання */
+    gap: 15px;
 }
 
 .form-links a {
     color: var(--primary-dark-blue);
     text-decoration: none;
+    font-size: 0.9rem;
 }
 .form-links a:hover {
     text-decoration: underline;
     color: var(--accent-color);
 }
 
-/* * Декоративні повідомлення (завдання) 
- * За замовчуванням приховане.
- * Щоб побачити, як воно виглядає, 
- * тимчасово прибери 'display: none'
- */
+/* Повідомлення про помилки */
 .form-message {
     padding: 1rem;
     border-radius: 5px;
     font-weight: bold;
-    display: none; /* <-- Приховано за замовчуванням */
+    display: none;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 .form-error {
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
-    display: block; /* <-- Тимчасово увімкнено, щоб ти бачила (як у завданні) */
+    display: block; 
 }
 
-/* * Лінки для імітації (завдання)
- */
-.simulation-links {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(0,0,0,0.1);
-    text-align: center;
+/* Стилі Футера */
+.footer {
+    background-color: var(--header-footer-bg); /* Той самий колір, що і в хедері */
+    padding: 20px 0;
+    margin-top: auto; /* Це важливо для притискання до низу */
+    
+    /* Центрування тексту */
+    text-align: center; 
 }
-.simulation-links p {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-.simulation-links a {
-    display: block;
-    margin-top: 0.5rem;
-    color: var(--accent-color);
-    font-weight: bold;
+
+/* Якщо всередині футера є контейнер */
+.footer .container {
+    display: flex;
+    justify-content: center; /* Центруємо вміст по горизонталі */
+    align-items: center;
 }
 
 /* ----------------------------------- */
@@ -889,84 +921,3 @@ a.nav-link:hover {
     color: #aaa;
     font-size: 0.9rem;
 }
-
-/* ----------------------------------- */
-/* === 12 Стилі для Авторизації (Login/Register) === */
-/* ----------------------------------- */
-
-.auth-body {
-    font-family: sans-serif;
-    background-color: #f0f2f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.auth-container {
-    width: 100%;
-    max-width: 400px;
-    padding: 30px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.auth-container h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.form-group { margin-bottom: 20px; }
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.btn-submit {
-    width: 100%;
-    padding: 12px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.btn-submit:hover { background: #0056b3; }
-
-.error-msg {
-    color: #dc3545;
-    text-align: center;
-    display: none;
-    margin-bottom: 15px;
-    padding: 10px;
-    background: #f8d7da;
-    border-radius: 5px;
-}
-
-.auth-link {
-    text-align: center;
-    margin-top: 20px;
-    display: block;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.auth-link:hover { text-decoration: underline; }
