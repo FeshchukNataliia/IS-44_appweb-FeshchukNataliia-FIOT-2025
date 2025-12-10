@@ -640,7 +640,7 @@ a.nav-link:hover {
     display: flex;
     justify-content: center; /* Центруємо вміст по горизонталі */
     align-items: center;
-}
+} 
 
 /* ----------------------------------- */
 /* 9. СТИЛІ СТОРІНКИ ПРОФІЛЮ (PROFILE) */
